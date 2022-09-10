@@ -34,6 +34,7 @@ public class ActLogAspect {
         activityLog.setDate(LocalDate.now());
         activityLog.setDuration(finishTime-startTime);
         activityLog.setOperation(proceedingJoinPoint.getSignature().toShortString());
+        System.out.println("msg");
         activityLogRepo.save(activityLog);
         return proceed;
     }

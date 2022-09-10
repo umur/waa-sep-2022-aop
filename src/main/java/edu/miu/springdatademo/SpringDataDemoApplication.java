@@ -16,6 +16,7 @@ public class SpringDataDemoApplication {
 	@Bean
 	public ModelMapper getMapper(){
 		return new ModelMapper();
+
 	}
 
 }

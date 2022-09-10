@@ -1,5 +1,6 @@
 package edu.miu.springdatademo.service.impl;
 
+import edu.miu.springdatademo.aopAll.ExecutionTime;
 import edu.miu.springdatademo.dto.ProductDTO;
 import edu.miu.springdatademo.dto.ReviewDTO;
 import edu.miu.springdatademo.entity.Product;
@@ -20,6 +21,7 @@ public class ProductServiceImpl implements ProductService {
     private final ModelMapper modelMapper;
 
     @Override
+    @ExecutionTime
     public List<ProductDTO> getAllProduct() {
         return productRepo.findAll().stream().map(all->modelMapper.map(all,ProductDTO.class)).collect(Collectors.toList());
     }
