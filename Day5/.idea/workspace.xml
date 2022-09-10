@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44207e64-6fdf-4064-aab4-8233f31b7092" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../src/main/java/com/example/day5/Aspect/ActivityLoggingAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/main/java/com/example/day5/Aspect/ExecutionTimeAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/main/java/com/example/day5/Aspect/annotation/ActivityLogging.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/main/java/com/example/day5/Aspect/annotation/ExecutionTime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/main/java/com/example/day5/Controller/ActivityLogController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/main/java/com/example/day5/Repository/ActivityLogRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/main/java/com/example/day5/Service/ActivityLoggingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/main/java/com/example/day5/Service/impl/ActivityLoggingServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/main/java/com/example/day5/exceptions/AopIsAwesomeHeaderException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/example/day5/entity/ActivityLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/example/day5/entity/ActivityLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/example/day5/Aspect/ExecutionTimeAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/example/day5/Aspect/ExecutionTimeAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/example/day5/Aspect/ExecutionTimeAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/example/day5/Aspect/ExecutionTimeAspect.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -2,6 +2,7 @@ package com.example.day5.Aspect;
 
 import com.example.day5.Service.ActivityLoggingService;
 import com.example.day5.entity.ActivityLog;
+import com.example.day5.exceptions.AopIsAwesomeHeaderException;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -9,6 +10,7 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDate;
 
 @Aspect
@@ -17,6 +19,14 @@ public class ExecutionTimeAspect {
 
     @Autowired
     private ActivityLoggingService activityLoggingService;
+    private HttpServletRequest request;
+
+    @Autowired
+    public ExecutionTimeAspect(HttpServletRequest request, ActivityLoggingService activityLoggingService) {
+        this.request = request;
+        this.activityLoggingService = activityLoggingService;
+    }
+
     @Pointcut("@annotation(com.example.day5.Aspect.annotation.ExecutionTime)")
     public void executionTimeAnnotation(){
 
@@ -25,6 +35,11 @@ public class ExecutionTimeAspect {
 
     @Around("executionTimeAnnotation()")
     public Object calculateExecutionTime(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+
+        if (request.getMethod().equals("POST") && request.getHeader("AOP-IS-AWESOME") == null) {
+            throw new AopIsAwesomeHeaderException("AopIsAwesomeHeaderException thrown");
+        }
+
         long start = System.currentTimeMillis();
         var result = proceedingJoinPoint.proceed();
         long finish = System.currentTimeMillis();
@@ -35,4 +50,11 @@ public class ExecutionTimeAspect {
         activityLoggingService.saveActivity(activityLog);
         return result;
     }
+
+
+
+
+
+
 }
+
