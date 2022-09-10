@@ -25,12 +25,12 @@ public class ExecutionTimeAspect {
 
     @Around("executionTimeAnnotation()")
     public Object calculateExecutionTime(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
-        long start = System.nanoTime();
+        long start = System.currentTimeMillis();
         var result = proceedingJoinPoint.proceed();
-        long finish = System.nanoTime();
+        long finish = System.currentTimeMillis();
         System.out.println(proceedingJoinPoint.getSignature().getName() + " takes ns: " + finish);
 
-        ActivityLog activityLog= new ActivityLog(LocalDate.now(),proceedingJoinPoint.getSignature().getName(),finish-start);
+        ActivityLog activityLog= new ActivityLog(LocalDate.now(),proceedingJoinPoint.getSignature().getName(),(finish-start));
 
         activityLoggingService.saveActivity(activityLog);
         return result;

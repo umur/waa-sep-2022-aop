@@ -23,7 +23,7 @@ public class ActivityLog implements Serializable {
     private int id;
     private LocalDate localDate;
     private String operation;
-    private long duration;
+    private double duration;
 
     public ActivityLog(LocalDate localDate, String operation, long duration) {
         this.localDate = localDate;
