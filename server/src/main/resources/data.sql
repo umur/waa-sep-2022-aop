@@ -1,0 +1,2 @@
+INSERT INTO activity_log (duration, execution_time, operation) VALUES (0.0111702, '2022.09.09 20:53', 'getTestMethod');
+INSERT INTO activity_log (duration, execution_time, operation) VALUES (0.0111732, '2022.09.09 21:53', 'postTestMethod');
