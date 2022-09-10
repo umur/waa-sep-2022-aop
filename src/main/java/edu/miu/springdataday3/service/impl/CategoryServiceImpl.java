@@ -1,5 +1,6 @@
 package edu.miu.springdataday3.service.impl;
 
+import edu.miu.springdataday3.aspect.annotation.ExecutionTime;
 import edu.miu.springdataday3.entity.Category;
 import edu.miu.springdataday3.entity.Product;
 import edu.miu.springdataday3.entity.dto.CategoryDTO;
@@ -22,6 +23,7 @@ public class CategoryServiceImpl implements CategoryService {
     private final ModelMapper modelMapper;
 
     @Override
+    @ExecutionTime
     public List<CategoryDTO> getAll() {
         List<Category> category = categoryRepo.findAll();
         return category.stream().map(category1 -> modelMapper.map(category1, CategoryDTO.class)).collect(Collectors.toList());

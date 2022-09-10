@@ -1,5 +1,6 @@
 package edu.miu.springdataday3.service.impl;
 
+import edu.miu.springdataday3.aspect.annotation.ExecutionTime;
 import edu.miu.springdataday3.entity.User;
 import edu.miu.springdataday3.entity.dto.UserDTO;
 import edu.miu.springdataday3.repo.UserRepo;
@@ -18,6 +19,7 @@ public class UserServiceImpl implements UserService {
     private final ModelMapper modelMapper;
 
     @Override
+    @ExecutionTime
     public List<UserDTO> getAll() {
         List<User> users = userRepo.findAll();
         return users.stream().map(user -> modelMapper.map(user, UserDTO.class)).collect(Collectors.toList());
