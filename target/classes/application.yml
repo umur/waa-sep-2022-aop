@@ -3,7 +3,7 @@ spring:
     name: Day5
 
   datasource:
-    password: 1
+    password: root
     url: jdbc:postgresql://localhost:5432/Day5
     username: postgres
 
