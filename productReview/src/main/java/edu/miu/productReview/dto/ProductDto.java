@@ -19,9 +19,7 @@ public class ProductDto {
     private Float price;
     private Float rating;
 
-    //@JsonManagedReference
     private CategoryDto category;
 
-    //@JsonBackReference
     private List<ReviewDto> reviews;
 }

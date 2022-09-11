@@ -1,5 +1,7 @@
 package edu.miu.productReview.dto;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import edu.miu.productReview.domain.Product;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

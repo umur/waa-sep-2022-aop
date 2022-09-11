@@ -1,5 +1,6 @@
 package edu.miu.productReview.domain;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -19,10 +20,12 @@ public class User {
 
     //user can create many review
     @OneToMany(mappedBy="user")
+    @JsonManagedReference
     private List<Review> reviews;
 
     //user can have only one Address
     @OneToOne
     @JoinColumn(name="id_address")
+    @JsonManagedReference
     private Address address;
 }

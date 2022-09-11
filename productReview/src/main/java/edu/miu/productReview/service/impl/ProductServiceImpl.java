@@ -26,6 +26,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     @ExecutionTime
     public ProductDto save(ProductDto product) {
+        System.out.println(product);
         Product result = productRepo.save(mapper.map(product, Product.class));
         return mapper.map(result, ProductDto.class);
     }

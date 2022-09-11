@@ -43,15 +43,17 @@ public class RuntimeAspect {
 
     @Around("within(edu.miu.productReview.controller.*)")
     public Object log(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
-        if(request.getMethod().equalsIgnoreCase("POST")) {
-            var header = request.getHeader("AOP-IS-AWESOME");
-            if (header != null) {
-                return proceedingJoinPoint.proceed();
-            } else {
-                throw new AopIsAwesomeHeaderException("Header not found AOP-IS-AWESOME");
-            }
-        } else {
-            return proceedingJoinPoint.proceed();
-        }
+//        if(request.getMethod().equalsIgnoreCase("POST")) {
+//            var header = request.getHeader("AOP-IS-AWESOME");
+//            if (header != null) {
+//                return proceedingJoinPoint.proceed();
+//            } else {
+//                throw new AopIsAwesomeHeaderException("Header not found AOP-IS-AWESOME");
+//            }
+//        } else {
+//            return proceedingJoinPoint.proceed();
+//        }
+        System.out.println("Check header");
+        return proceedingJoinPoint.proceed();
     }
 }

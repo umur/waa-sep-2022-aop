@@ -1,5 +1,7 @@
 package edu.miu.productReview.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -18,8 +20,10 @@ public class Product {
 
     //a product can belong to only one category
     @ManyToOne
+    @JsonBackReference
     private Category category;
 
     @OneToMany(mappedBy = "product") //on column, bidirection
+    @JsonManagedReference
     private List<Review> reviews;
 }

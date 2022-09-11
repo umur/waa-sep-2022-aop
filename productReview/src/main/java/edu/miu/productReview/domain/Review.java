@@ -1,4 +1,5 @@
 package edu.miu.productReview.domain;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -13,8 +14,10 @@ public class Review {
 
     //a review can only belong to one user
     @ManyToOne
+    @JsonBackReference
     private User user;
 
     @ManyToOne
+    @JsonBackReference
     private Product product;
 }
