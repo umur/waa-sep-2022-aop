@@ -2,6 +2,7 @@ package edu.miu.entity;
 
 
 import lombok.Data;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +12,7 @@ import java.time.LocalDate;
 
 @Entity
 @Data
-
+@Setter
 public class ActivityLog {
 
     @Id
@@ -19,7 +20,7 @@ public class ActivityLog {
     private int id;
     private LocalDate date;
     private String operation;
-    private double duration;
+    private long duration;
 
 
 

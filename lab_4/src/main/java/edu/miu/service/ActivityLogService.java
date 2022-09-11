@@ -7,7 +7,7 @@ import java.util.List;
 public interface ActivityLogService {
     public List<ActivityLog> findAll();
     public ActivityLog getActivityLogById();
-    public ActivityLog saveActivityLog();
+    public void saveActivityLog(ActivityLog activityLog);
 
 
 }

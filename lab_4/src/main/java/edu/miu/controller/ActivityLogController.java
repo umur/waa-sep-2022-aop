@@ -23,8 +23,8 @@ public class ActivityLogController {
     }
     @ExecutionTime
     @GetMapping("/{id}")
-    public ActivityLog  findActivityLogById() {
-        return activityLogService.saveActivityLog();
+    public void saveActivityLogById(ActivityLog activityLog) {
+         activityLogService.saveActivityLog(activityLog);
     }
 
 }
