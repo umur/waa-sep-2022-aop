@@ -21,13 +21,13 @@ public class Course {
     private String name;
     private int credit;
 
-    @ManyToMany
-    @JoinColumn(name="students_id")
-    List<Student> students;
+    @OneToMany(mappedBy = "course")
+   List<Course_Student> courseStudents;
 
-    @ManyToMany
-    @JoinColumn(name="professors_id")
-    List<Professor>professors;
+    @OneToMany(mappedBy = "course")
+    List<Course_Professor> course_professors;
+
+
 
 
 }

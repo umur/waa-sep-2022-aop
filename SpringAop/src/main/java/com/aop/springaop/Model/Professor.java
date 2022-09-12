@@ -18,11 +18,12 @@ import java.util.List;
 public class Professor extends Person {
     private double salary;
 
-    @ManyToMany
-    @JoinColumn(name="students_id")
-    List<Student> students;
+    @OneToMany(mappedBy = "professor")
+    private List<Course_Professor> course_professors;
 
-    @ManyToMany(mappedBy = "professors")
-    List<Course>courses;
+    @OneToMany(mappedBy = "professor")
+    private List<Professor_Student> professor_students;
+
+
 
 }

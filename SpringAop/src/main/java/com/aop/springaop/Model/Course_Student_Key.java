@@ -1,4 +1,10 @@
 package com.aop.springaop.Model;
 
-public class Course_Student_Key {
+import javax.persistence.Embeddable;
+import java.io.Serializable;
+
+@Embeddable
+public class Course_Student_Key implements Serializable {
+    private int studentId;
+    private int courseId;
 }

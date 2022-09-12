@@ -18,10 +18,13 @@ import java.util.List;
 public class Student extends Person{
     private double gpa;
 
-    @ManyToMany(mappedBy = "students")
-    List<Course> courses;
+    @OneToMany(mappedBy = "student")
+    private List<Course_Student> courseStudents;
 
-    @ManyToMany(mappedBy = "students")
-    List<Professor>professors;
+    @OneToMany(mappedBy = "student")
+    private List<Professor_Student> studentProfessors;
+
+
+
 
 }
